@@ -1,0 +1,610 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    android:padding="10dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_root_frame"
+        android:orientation="vertical"
+        android:padding="14dp">
+
+        <!-- TOP HEADER -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingBottom="10dp">
+
+            <TextView
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:background="@drawable/bg_small_badge"
+                android:gravity="center"
+                android:text="F"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:letterSpacing="0.08"
+                    android:text="FRANCIS OPTIMIZE"
+                    android:textColor="#FFFFFF"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="monospace"
+                    android:text="GL BLUR &amp; FPS BOOSTER"
+                    android:textColor="#888888"
+                    android:textSize="10sp" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/txtRootBadge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_pill_status"
+                android:fontFamily="monospace"
+                android:paddingStart="12dp"
+                android:paddingTop="6dp"
+                android:paddingEnd="12dp"
+                android:paddingBottom="6dp"
+                android:text="ROOT: CHECKING..."
+                android:textColor="#E0E0E0"
+                android:textSize="10sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginBottom="10dp"
+            android:background="#202020" />
+
+        <!-- MAIN SCROLL CONTENT -->
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- 1. SELECT GAME CARD -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_card"
+                    android:orientation="vertical"
+                    android:padding="14dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="monospace"
+                            android:text="SELECT TARGET GAME"
+                            android:textColor="#8E8E8E"
+                            android:textSize="10sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/txtSelectedPkg"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="monospace"
+                            android:text="com.dts.freefireth"
+                            android:textColor="#CCCCCC"
+                            android:textSize="10sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/btnSelectFF"
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:layout_marginEnd="6dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/bg_btn_selected"
+                            android:text="FREE FIRE"
+                            android:textColor="#000000"
+                            android:textSize="11sp"
+                            android:textStyle="bold" />
+
+                        <Button
+                            android:id="@+id/btnSelectFFMax"
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:layout_marginEnd="6dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/bg_btn_secondary"
+                            android:text="FF MAX"
+                            android:textColor="#FFFFFF"
+                            android:textSize="11sp"
+                            android:textStyle="bold" />
+
+                        <Button
+                            android:id="@+id/btnPickAnyApp"
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/bg_btn_secondary"
+                            android:text="ALL APPS"
+                            android:textColor="#FFFFFF"
+                            android:textSize="11sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- 2. LIVE MONOCHROME GL BLUR PREVIEW + STATS -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/bg_card"
+                    android:orientation="vertical"
+                    android:padding="12dp">
+
+                    <com.francis.optimize.GlPreviewView
+                        android:id="@+id/glPreview"
+                        android:layout_width="match_parent"
+                        android:layout_height="155dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="6dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/bg_console"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:padding="8dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="monospace"
+                                android:text="GPU LOAD"
+                                android:textColor="#888888"
+                                android:textSize="9sp" />
+
+                            <TextView
+                                android:id="@+id/txtGpuLoad"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="38%"
+                                android:textColor="#FFFFFF"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="6dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/bg_console"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:padding="8dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="monospace"
+                                android:text="TARGET FPS"
+                                android:textColor="#888888"
+                                android:textSize="9sp" />
+
+                            <TextView
+                                android:id="@+id/txtEstFps"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="150 FPS"
+                                android:textColor="#FFFFFF"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@drawable/bg_console"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:padding="8dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="monospace"
+                                android:text="SMOOTHNESS"
+                                android:textColor="#888888"
+                                android:textSize="9sp" />
+
+                            <TextView
+                                android:id="@+id/txtSmoothness"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="ULTRA"
+                                android:textColor="#FFFFFF"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- 3. PRESETS ROW -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/btnPresetMaxBlur"
+                        android:layout_width="0dp"
+                        android:layout_height="38dp"
+                        android:layout_marginEnd="6dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_btn_secondary"
+                        android:fontFamily="monospace"
+                        android:text="MAX BLUR"
+                        android:textColor="#FFFFFF"
+                        android:textSize="10sp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/btnPresetPotato"
+                        android:layout_width="0dp"
+                        android:layout_height="38dp"
+                        android:layout_marginEnd="6dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_btn_secondary"
+                        android:fontFamily="monospace"
+                        android:text="POTATO GL"
+                        android:textColor="#FFFFFF"
+                        android:textSize="10sp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/btnPresetSmooth"
+                        android:layout_width="0dp"
+                        android:layout_height="38dp"
+                        android:layout_marginEnd="6dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_btn_secondary"
+                        android:fontFamily="monospace"
+                        android:text="SMOOTH"
+                        android:textColor="#FFFFFF"
+                        android:textSize="10sp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/btnPresetStock"
+                        android:layout_width="0dp"
+                        android:layout_height="38dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_btn_secondary"
+                        android:fontFamily="monospace"
+                        android:text="STOCK"
+                        android:textColor="#FFFFFF"
+                        android:textSize="10sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <!-- 4. GRAPHICS & BLUR SLIDERS -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/bg_card"
+                    android:orientation="vertical"
+                    android:padding="14dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="monospace"
+                        android:text="GL GRAPHICS &amp; BLUR CONTROLS"
+                        android:textColor="#8E8E8E"
+                        android:textSize="10sp"
+                        android:textStyle="bold" />
+
+                    <!-- Slider 1: Resolution Downscale -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="RESOLUTION DOWNSCALE (BLUR)"
+                            android:textColor="#E5E5E5"
+                            android:textSize="11sp"
+                            android:textStyle="bold" />
+                        <TextView
+                            android:id="@+id/txtResVal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="monospace"
+                            android:text="45%"
+                            android:textColor="#FFFFFF"
+                            android:textSize="11sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                    <SeekBar
+                        android:id="@+id/seekRes"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:max="75"
+                        android:progress="20"
+                        android:progressDrawable="@drawable/mono_progress"
+                        android:thumb="@drawable/mono_seekbar_thumb" />
+
+                    <!-- Slider 2: Texture Scale -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="TEXTURE DOWNSCALE / BLUR"
+                            android:textColor="#E5E5E5"
+                            android:textSize="11sp"
+                            android:textStyle="bold" />
+                        <TextView
+                            android:id="@+id/txtTexVal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="monospace"
+                            android:text="0.45x"
+                            android:textColor="#FFFFFF"
+                            android:textSize="11sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                    <SeekBar
+                        android:id="@+id/seekTex"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:max="75"
+                        android:progress="20"
+                        android:progressDrawable="@drawable/mono_progress"
+                        android:thumb="@drawable/mono_seekbar_thumb" />
+
+                    <!-- Slider 3: Mipmap / LOD Bias -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="MIPMAP / LOD BLUR BIAS"
+                            android:textColor="#E5E5E5"
+                            android:textSize="11sp"
+                            android:textStyle="bold" />
+                        <TextView
+                            android:id="@+id/txtLodVal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="monospace"
+                            android:text="+2.5"
+                            android:textColor="#FFFFFF"
+                            android:textSize="11sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                    <SeekBar
+                        android:id="@+id/seekLod"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:max="40"
+                        android:progress="25"
+                        android:progressDrawable="@drawable/mono_progress"
+                        android:thumb="@drawable/mono_seekbar_thumb" />
+
+                    <!-- Slider 4: Target FPS Cap -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="TARGET FPS CAP"
+                            android:textColor="#E5E5E5"
+                            android:textSize="11sp"
+                            android:textStyle="bold" />
+                        <TextView
+                            android:id="@+id/txtFpsVal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="monospace"
+                            android:text="150 FPS"
+                            android:textColor="#FFFFFF"
+                            android:textSize="11sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                    <SeekBar
+                        android:id="@+id/seekFps"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:max="180"
+                        android:progress="90"
+                        android:progressDrawable="@drawable/mono_progress"
+                        android:thumb="@drawable/mono_seekbar_thumb" />
+                </LinearLayout>
+
+                <!-- 5. MANUAL OPTIMIZER MODULES (ALL OFF BY DEFAULT!) -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/bg_card"
+                    android:orientation="vertical"
+                    android:padding="14dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="monospace"
+                        android:text="EXTRA MODULES (MANUAL - OFF BY DEFAULT)"
+                        android:textColor="#8E8E8E"
+                        android:textSize="10sp"
+                        android:textStyle="bold" />
+
+                    <Switch
+                        android:id="@+id/swGlHook"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:checked="false"
+                        android:text="Native OpenGL ES Texture Blur Hook (libfrancisgl.so)"
+                        android:textColor="#EFEFEF"
+                        android:textSize="12sp" />
+
+                    <Switch
+                        android:id="@+id/swHwOverlay"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:checked="false"
+                        android:text="Disable HW Overlays &amp; Force SkiaGL"
+                        android:textColor="#EFEFEF"
+                        android:textSize="12sp" />
+
+                    <Switch
+                        android:id="@+id/swNoAnim"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:checked="false"
+                        android:text="Disable Android UI Animations (0x Scale)"
+                        android:textColor="#EFEFEF"
+                        android:textSize="12sp" />
+
+                    <Switch
+                        android:id="@+id/swTrimRam"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:checked="false"
+                        android:text="Trim Background RAM &amp; Caches on Launch"
+                        android:textColor="#EFEFEF"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <!-- 6. EXECUTION LOG -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/bg_card"
+                    android:orientation="vertical"
+                    android:padding="12dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="monospace"
+                        android:text="ENGINE STATUS LOG"
+                        android:textColor="#8E8E8E"
+                        android:textSize="10sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/txtLog"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/bg_console"
+                        android:fontFamily="monospace"
+                        android:minLines="4"
+                        android:padding="10dp"
+                        android:text="[READY] Select Free Fire &amp; adjust blur level."
+                        android:textColor="#DCDCDC"
+                        android:textSize="10sp" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </ScrollView>
+
+        <!-- BOTTOM ACTION BAR -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnRestore"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_marginEnd="8dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_btn_secondary"
+                android:text="RESTORE 100%"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btnLaunchGame"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="2"
+                android:background="@drawable/bg_btn_primary"
+                android:text="APPLY BLUR &amp; LAUNCH GAME"
+                android:textColor="#000000"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+    </LinearLayout>
+</FrameLayout>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    android:padding="14dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_root_frame"
+        android:padding="24dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="96dp"
+                android:layout_height="96dp"
+                android:background="@drawable/bg_logo_badge"
+                android:gravity="center"
+                android:text="F"
+                android:textColor="#FFFFFF"
+                android:textSize="48sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:letterSpacing="0.14"
+                android:text="FRANCIS OPTIMIZE"
+                android:textColor="#FFFFFF"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:fontFamily="monospace"
+                android:letterSpacing="0.08"
+                android:text="GLTOOLS EDITION  |  MONOCHROME ENGINE"
+                android:textColor="#8A8A8A"
+                android:textSize="11sp" />
+
+            <ProgressBar
+                android:id="@+id/splashProgress"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="280dp"
+                android:layout_height="10dp"
+                android:layout_marginTop="28dp"
+                android:max="100"
+                android:progress="0"
+                android:progressDrawable="@drawable/mono_progress" />
+
+            <TextView
+                android:id="@+id/txtSplashStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:fontFamily="monospace"
+                android:text="INITIALIZING GL ENGINE... [0%]"
+                android:textColor="#BFBFBF"
+                android:textSize="11sp" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnSkipSplash"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/bg_btn_secondary"
+            android:fontFamily="monospace"
+            android:minWidth="86dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:text="SKIP &gt;"
+            android:textColor="#FFFFFF"
+            android:textSize="11sp"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+</FrameLayout>
